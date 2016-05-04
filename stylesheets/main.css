@@ -1,0 +1,7 @@
+form .ng-invalid.ng-dirty {
+    background-color: #ffcbc1;
+}
+
+form .ng-valid.ng-dirty {
+    background-color: #1dca07;
+}

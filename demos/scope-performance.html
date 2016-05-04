@@ -1,0 +1,47 @@
+<html ng-app="complexScopeApp">
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+  <script>
+    angular.module('complexScopeApp', [])
+      .controller('complexController', function ($scope) {
+        $scope.listSize = 300;
+        $scope.list = [];
+
+        $scope.$watch('listSize', function(size){
+          $scope.list.length = 0;
+          for (var i = 0; i < size; i++) {
+            $scope.list.push({ id: i, name: 'Item'+i });
+          }
+        });
+      });
+  </script>
+</head>
+<body>
+
+<div class="container">
+  <h1 class="page-header">Scope performance</h1>
+
+  <div class="row" ng-controller="complexController">
+    <div class="col-lg-6">
+      <p class="form-group">
+        <label>Number of list items: </label>
+        <input type="text" ng-model="listSize">
+      </p>
+      <p class="form-group">
+        <label>Demo input:</label>
+        <input type="text" ng-model="name">
+        <h3>{{name}}</h3>
+      </p>
+    </div>
+    <div class="col-lg-6">
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="item in list">{{ item }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
