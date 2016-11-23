@@ -36,7 +36,7 @@
     "angular-messages": "1.5.8",
     "angular-route": "1.5.8",
     "angular": "1.5.8",
-    "bookmonkey-api": "1.0.0",
+    "bookmonkey-api": "^2.0.1",
     "bootstrap": "3.3.6",
     "jquery": "2.2.3"
   },
